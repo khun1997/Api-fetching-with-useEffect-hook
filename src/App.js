@@ -1,35 +1,35 @@
-import React, {useState, useEffect} from 'react'
-import styled from 'styled-components';
+import React from 'react'
+import UseApiFetch from './hooks/useApiFetch';
+// import styled from 'styled-components';
 
-const Button = styled.button`
-  font-size:2em;
-  
-`;
+//
+// 
 
 function App(props){
-    const [name,setName] = useState([]);
+    // const [name,setName] = useState([]);
 
-    useEffect(()=> {
-        const fetchData = async ()=>{
-            const response = await fetch('https://475cd8d9-f083-41b3-982d-0430418098ec.mock.pstmn.io/demo');
-            const newName = await response.json()
-            setName(newName)
-            console.log(newName)
-        };
-        fetchData()
-    },[props.id]);
+    // useEffect(()=> {
+    //     const fetchData = async ()=>{
+    //         const response = await fetch('https://475cd8d9-f083-41b3-982d-0430418098ec.mock.pstmn.io/demo');
+    //         const newName = await response.json()
+    //         setName(newName)
+    //         console.log(newName)
+    //     };
+    //     fetchData()
+    // },[props.id]);
 
 
         return(
             <div className='app'>
                 
-                <Button>
-                {name.map((user) =>(
-                    <div>{user.name}</div>
-                ))}
-          
+
+                <UseApiFetch/>
+                {/* <Button>
+                    {name.map((user) =>(
+                        <div>{user.name}</div>
+                    ))}
                 </Button>
-                
+                 */}
             </div>
             
         )
